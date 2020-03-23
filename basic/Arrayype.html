@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arraytype.html</title>
+</head>
+
+<body>
+    
+
+    <p id = "show"> 하하</p>
+    <p id = "shoow">쏘리쏘리</p>
+    <button onclick="createTable()"> create Table</button>
+   
+   <script> 
+
+        function createTable() {
+            console.log(document.getElementById("show"));
+        
+        
+        var friend1 = {
+            firstName: "hyunwoo",
+            lastName: "lee",
+            age: 31,
+            
+        }
+        var friend2 = {
+            firstName: "seongwoo",
+            lastName: "hong",
+            age: 24,
+            
+        }
+        
+        var friend3 = {
+            firstName: "junwon",
+            lastName: "ha",
+            age: 21,
+            
+        }
+
+        var $tags  = "<ul>";
+        var friends = [friend1, friend2, friend3]
+        
+        for (obj of friends) { // obj는 배열 가져옴 1,2,3
+            $tags += "<li>";
+            for (f in obj) { // f는 필드에서 가져옴 
+              //   console.log(obj[f])
+                $tags += f +":"+obj[f] + " ";
+
+            }
+           $tags += "</li>";
+           
+            // console.log(obj["firstName"] + "," + obj.lastName+","+obj.age);
+        }
+        $tags += "</ul>" ;
+
+        console.log($tags);
+
+        document.getElementById("show"). innerHTML =$tags;
+        
+
+
+        var $tags  = "<table border ='1'>";
+        var friends = [friend1, friend2, friend3];
+        var titles = ["firstName", "lastName", "age"];
+        $tags += "<tr>";
+          for(t of titles) {
+            $tags += "<th>" + t + "</th>";
+
+          }  
+        $tags += "</tr>"; 
+        for (obj of friends) { // obj는 배열 가져옴 1,2,3
+            $tags += "<tr>";
+            for (f in obj) { // f는 필드에서 가져옴 
+              //   console.log(obj[f])
+                $tags += "<td>" + obj[f] + "</td>";
+
+            }
+         $tags += "</tr>";
+           
+
+            // console.log(obj["firstName"] + "," + obj.lastName+","+obj.age);
+        }
+        $tags += "</table>" ;
+
+        console.log($tags);
+        document.getElementById("shoow"). innerHTML =$tags;
+    }
+       
+       </script>
+
+</body>
+
+</html>
