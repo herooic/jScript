@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n1</title>
+</head>
+
+<body>
+    <input type="text" name="fristName" id="firstName" value="hyunwoo">
+    <input type="texr" name="lastName" id="lastName" value="lee">
+    <input type="text" name="age" id="age" value="31">
+    <button id="btn" onclick="translatebtn()">click</button>
+    <table id="tbl" border="1">
+        <tbody>
+            <tr>
+                <td>firstName </td>
+                <td>lastname</td>
+                <td>age</td>
+            </tr>
+            <tr>
+                <td style="background-color: aqua;">hyunwoo</td>
+                <td>lee</td>
+                <td>31</td>
+            </tr>
+
+            <tr>
+                <td>koo</td>
+                <td style="background-color: aqua;">ooo</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td> gildong</td>
+                <td> Hong</td>
+                <td style="background-color: aqua;"> 12</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <script>
+        var tdl = document.getElementsByTagName("tr");
+        tds.onmouseover = function(){
+            console.log(this);
+
+        }
+ 
+
+        var btn = document.getElementById("btn");
+        console.log(btn);
+        btn.onmouseover = function () {
+            console.log(this)
+            this.style.background = "yellow"
+            this.style.width = "100px"
+        }
+        btn.onmouseout = function () {
+            this.style.background = ""
+            this.style.width = "50px"
+        }
+
+
+        function translatebtn() {
+            var na1 = document.getElementById("firstName").value;
+            var na2 = document.getElementById("lastName").value;
+            var na3 = document.getElementById("age").value;
+            
+            tds[2].style.background = "yellow";
+            tds[2].style.color = "green";
+
+            document.getElementById('firstName').value = " ";
+            document.getElementById('lastName').value = " ";
+            document.getElementById('age').value = " ";
+        }
+    </script>
+
+
+</body>
+
+</html>

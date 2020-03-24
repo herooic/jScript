@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn" onclick="addrList()"> Btn</button>
+
+    <table id="tbl" border="1">
+        <tr style="background: coral; width: 3;">
+            <td>Name</td>
+            <td>Phone</td>
+            <td>Age</td>
+        </tr>
+
+    </table>
+    <script>
+
+    
+        var tbl = document.getElementById("tbl");
+         var addrList = [
+            { name: "hong", phone: "12-12", age: 20 },
+            { name: "kim", phone: "34-56" ,age: 20 },
+            { name: "hwang", phone: "78-90", age: 20 },
+            { name: "lee", phone: "41-77", age: 20 }
+        ]
+
+        var $titles = ["name", "phone", "age"];
+        var btn = document.getElementById("btn");
+        btn.onclick = function () {
+            var tbl = document.getElementById("tbl");
+            var $text, $td, $tr;
+            addrList.forEach(function (o) {
+                $tr = document.createElement("tr");
+                for (field of $titles) {
+                    $text = document.createTextNode(o[field]);
+                    // o 는 배열 (첫번째 오는게 오브젝트 )
+                    $td = document.createElement("td");
+                    $td.appendChild($text);
+                    $tr.appendChild($td);
+                }
+                tbl.appendChild($tr);
+            })
+        }  
+
+ </script>
+
+</body>
+
+</html>
